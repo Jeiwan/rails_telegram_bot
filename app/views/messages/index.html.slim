@@ -1,0 +1,27 @@
+.page-header
+  = link_to new_message_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Message
+  h1
+    | Listing messages
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Text
+        th
+        th
+        th
+    tbody
+      - @messages.each do | message |
+        tr
+          td
+            = message.text
+          td
+            = link_to 'Show', message
+          td
+            = link_to 'Edit', edit_message_path(message) 
+          td
+            = link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } 
