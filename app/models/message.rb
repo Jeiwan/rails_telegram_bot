@@ -4,6 +4,6 @@ class Message < ActiveRecord::Base
   private
 
   def send_telegram_message
-    TelegramBotWorker.new.perform_async(text)
+    TelegramBotWorker.perform_async(text)
   end
 end

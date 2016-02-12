@@ -6,7 +6,7 @@ class TelegramBotWorker
   TOKEN = ENV['TELEGRAM_BOT_TOKEN']
   CHANNEL = ENV['TELEGRAM_BOT_CHANNEL']
 
-  def perform_async(message)
+  def perform(message)
     puts TOKEN
     puts CHANNEL
 
